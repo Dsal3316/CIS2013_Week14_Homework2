@@ -41,6 +41,7 @@ int main(){
 				cin.ignore();
 				list.done();
 				break;
+			}
 			case 'p':
 				list.print();
 				break;

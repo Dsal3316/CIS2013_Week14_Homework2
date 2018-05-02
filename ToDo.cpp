@@ -28,13 +28,13 @@ void ToDo::file_save(){
 		for (int i=0; i<next; i++){
 			ofstr << list[i] << endl;
 		}
-		ofstr.close;
+		ofstr.close();
 	}
 }
 
 void ToDo::file_read(){
 	ifstream ifstr(file_name);
-	if (!ifstr.fail)())
+	if (!ifstr.fail())
 	{
 		string s;
 		while (getline(ifstr,s))
@@ -58,7 +58,7 @@ void ToDo::done(){
 }
 
 void ToDo::done(int n){
-	if(n<+next)
+	if(n<=next)
 	{
 		for(int i=n; i<length-1;i++){
 			list[i]=list[i+1];
