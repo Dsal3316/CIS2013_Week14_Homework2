@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include "ToDo.h"
 
@@ -14,7 +15,7 @@ int main(){
 	
 	ToDo list(len);
 	
-	ToDo manylist[10];
+	//ToDo manylist[10];
 	
 	while(next != 'x'){
 		
@@ -24,14 +25,20 @@ int main(){
 		cout<< "Exit list app (x)" << endl;
 		cout<< "What do you want to do: ";
 		cin>>next;
+		cin.ignore();
+		cout<<endl;
 		
 		switch(next){
 			case 'a':
 				cout<< "Name a todo item: ";
-				cin>> action;
+				getline(cin,action, '\n');
 				list.add(action);
 				break;
 			case 'd':
+			{
+				cout<<"List item number to delete: ";
+				int n;
+				cin.ignore();
 				list.done();
 				break;
 			case 'p':
